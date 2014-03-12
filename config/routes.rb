@@ -1,4 +1,13 @@
 IosOneWeekTrial::Application.routes.draw do
+  scope '/r' do
+    scope '/v1' do
+      post 'sessions' => "rest_api/api#post_sessions"
+      get 'asset_sets' => "rest_api/api#get_asset_sets"
+      delete "asset_images/:id" => "rest_api/api#delete_asset_image"
+      post "asset_images" => "rest_api/api#post_asset_images"      
+    end
+  end
+  
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
